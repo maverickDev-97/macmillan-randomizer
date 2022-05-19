@@ -1,0 +1,31 @@
+.word {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 32px auto 40px;
+    width: 475px;
+    padding: 13px 0 17px;
+    border: 1px solid #E3EBF1;
+    text-decoration: none;
+    color: inherit;
+    font-family: 'DM Mono';
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+}
+
+.word-icon {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    stroke: #294A66;
+    transition: stroke .15s linear;
+}
+
+.word:hover .word-icon {
+    stroke: #09BC8A;
+}

@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Button from "./components/Button";
+import Heading from "./components/Heading";
+import Subheading from "./components/Subheading";
+import Word from "./components/Word";
+import { getRandomWord } from "./db";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 function App() {
+
+  const [word, setWord] = useState<string>(getRandomWord("initialWord"));
+  const { words, updateLocalStorage } = useLocalStorage();
+
+  const onClick = () => setWord(getRandomWord(word));
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Heading />
+      <Subheading />
+      <Word word={word} />
+      <div className="buttons">
+        <Button text="Randomize" isPrimary onClick={onClick} />
+        <Button text="Save word" />
+      </div>
     </div>
   );
 }
