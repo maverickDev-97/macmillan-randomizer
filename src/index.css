@@ -1,33 +1,40 @@
 @font-face {
   font-family: "DM Mono";
-  src: local('DM Mono'), url(./fonts/DMMono/DMMono-Medium.woff) format('woff');
+  src: local("DM Mono"), url(./fonts/DMMono/DMMono-Medium.woff) format("woff");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "DM Sans";
-  src: local('DM Sans'), url(./fonts/DMSans/DMSans-Medium.woff) format('woff');
+  src: local("DM Sans"), url(./fonts/DMSans/DMSans-Medium.woff) format("woff");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "DM Sans";
-  src: local('DMSans'), url(./fonts/DMSans/DMSans-Regular.woff) format('woff');
+  src: local("DMSans"), url(./fonts/DMSans/DMSans-Regular.woff) format("woff");
   font-weight: 400;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body,
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "DM Sans";
   font-weight: 400;
-  color: #294A66;
+  color: #294a66;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttons {
