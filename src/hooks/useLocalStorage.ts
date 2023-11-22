@@ -1,22 +1,43 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export const useLocalStorage = () => {
-    const [words, setWords] = useState<string[]>([]);
+  const [words, setWords] = useState<string[]>([]);
 
-    const updateLocalStorage = (word: string) => {
-        localStorage.setItem("words", `${words},${word}`);
-        setWords([...words, word])
+  const getAllSavedWords = () => {
+    const storageWords = localStorage.getItem("words");
+    return storageWords;
+  };
+
+  const updateLocalStorage = (word: string) => {
+    const allWords = getAllSavedWords();
+    localStorage.setItem(
+      "words",
+      allWords?.length ? `${words},${word}` : `${word}`
+    );
+    setWords([...words, word]);
+  };
+
+  const checkWord = (word: string) => {
+    const storageWords = getAllSavedWords();
+    return storageWords?.includes(word);
+  };
+
+  const saveWord = (word: string) => {
+    if (!checkWord(word)) updateLocalStorage(word);
+    return null;
+  };
+
+  useEffect(() => {
+    const storageWords = localStorage.getItem("words");
+    if (storageWords) {
+      setWords(storageWords.split(","));
     }
+  }, []);
 
-    useEffect(() => {
-        const storageWords = localStorage.getItem("words");
-        if (storageWords) {
-            setWords(storageWords.split(","));
-        }
-    }, [])
-
-    return {
-        words,
-        updateLocalStorage
-    }
-}
+  return {
+    words,
+    updateLocalStorage,
+    checkWord,
+    saveWord,
+  };
+};
