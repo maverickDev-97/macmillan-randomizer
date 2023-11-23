@@ -11,14 +11,29 @@
 
 .menu__item {
   cursor: pointer;
-  transition: all 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+.menu__item a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  cursor: inherit;
 }
 
 .menu__item:nth-child(1) {
   margin-right: 16px;
-  font-weight: bold;
 }
 
 .menu__item:hover {
   color: #09bc8a;
+}
+
+.menu__item.active {
+  cursor: default;
+  font-weight: bold;
+}
+
+.menu__item.active:hover {
+  color: inherit;
 }
