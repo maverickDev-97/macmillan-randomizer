@@ -1,11 +1,11 @@
 .subheading {
-    margin: 0 auto;
-    width: 279px;
-    font-size: 18px;
-    line-height: 27px;
-    text-align: center;
+  margin: 24px auto;
+  width: 279px;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
 }
 
 .highlight {
-    color: #09BC8A;
+  color: #09bc8a;
 }

@@ -5,6 +5,7 @@ import Subheading from "../../components/Subheading";
 import Word from "../../components/Word";
 import { getRandomWord } from "../../db";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import "./styles/index.css";
 
 export const Randomiser = () => {
   const [word, setWord] = useState<string>(getRandomWord("initialWord"));

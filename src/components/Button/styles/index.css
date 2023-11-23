@@ -1,33 +1,33 @@
 .button {
-    cursor: pointer;
-    margin-right: 24px;
-    padding: 15px 0;
-    width: 149px;
-    font-family: "DM Sans";
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #09BC8A;
-    background: #fff;
-    border: 1px solid #09BC8A;
-    border-radius: 1px;
-    outline: none;
-    transition: all .15s linear;
+  cursor: pointer;
+  margin-right: 30px;
+  padding: 15px 0;
+  width: 149px;
+  font-family: "DM Sans";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #09bc8a;
+  background: #fff;
+  border: 1px solid #09bc8a;
+  border-radius: 1px;
+  outline: none;
+  transition: all 0.15s linear;
 }
 
 .button:hover {
-    background: #e5f4f0;
+  background: #e5f4f0;
 }
 
 .button:nth-last-of-type(1) {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .isPrimary {
-    background: #09BC8A;
-    color: #fff;
+  background: #09bc8a;
+  color: #fff;
 }
 
 .isPrimary:hover {
-    background: #07ae7f;
+  background: #07ae7f;
 }
