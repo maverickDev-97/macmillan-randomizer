@@ -1,3 +1,4 @@
 export interface WordProps {
-    word: string;
+  word: string;
+  removeWordFromStorage?: (word: string) => void;
 }

@@ -1,14 +1,19 @@
-import { FC, MouseEvent } from "react";
+import { FC } from "react";
 import Icon from "../Icon";
 import { IconsNames, IconsSizes } from "../Icon/types";
 import "./styles/index.css";
 import { WordProps } from "./types";
+import { useLocation } from "react-router-dom";
 
-const Word: FC<WordProps> = ({ word }) => {
+const Word: FC<WordProps> = ({ word, removeWordFromStorage = () => {} }) => {
+  const { pathname } = useLocation();
+
+  const isIconDisplayed = pathname.includes("/saved");
+
   const link = `https://dictionary.cambridge.org/dictionary/english/${word}`;
 
-  const onDelete = (event: MouseEvent<HTMLDivElement>) => {
-    console.log(`Delete ${word}`);
+  const onDelete = () => {
+    removeWordFromStorage(word);
   };
 
   return (
@@ -19,9 +24,11 @@ const Word: FC<WordProps> = ({ word }) => {
           <Icon name={IconsNames.RightArrow} size={IconsSizes.Small} />
         </div>
       </a>
-      <div className="word__delete-button" onClick={onDelete}>
-        <Icon name={IconsNames.DeleteIcon} />
-      </div>
+      {isIconDisplayed && (
+        <div className="word__delete-button" onClick={onDelete}>
+          <Icon name={IconsNames.DeleteIcon} />
+        </div>
+      )}
     </div>
   );
 };

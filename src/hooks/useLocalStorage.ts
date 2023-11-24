@@ -27,8 +27,17 @@ export const useLocalStorage = () => {
     return null;
   };
 
+  const removeWordFromStorage = (wordToRemove: string) => {
+    const allWords = getAllSavedWords();
+    const updatedArray = allWords
+      ?.split(",")
+      .filter((word) => word !== wordToRemove);
+    setWords(updatedArray || []);
+    localStorage.setItem("words", updatedArray?.join(",") || "");
+  };
+
   useEffect(() => {
-    const storageWords = localStorage.getItem("words");
+    const storageWords = getAllSavedWords();
     if (storageWords) {
       setWords(storageWords.split(","));
     }
@@ -39,5 +48,6 @@ export const useLocalStorage = () => {
     updateLocalStorage,
     checkWord,
     saveWord,
+    removeWordFromStorage,
   };
 };
