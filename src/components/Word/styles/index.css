@@ -1,33 +1,48 @@
 .word {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
+  position: relative;
   min-width: inherit;
   padding: 13px 17px;
   border: 1px solid #e3ebf1;
+}
+
+.word__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-decoration: none;
   color: inherit;
   font-family: "DM Mono";
   font-weight: 500;
   font-size: 20px;
   line-height: 42px;
-  transition: border 0.15s linear;
+  transition: color 0.15s linear;
 }
 
-.word-icon {
+.word__icon {
   display: flex;
   margin-left: 16px;
   stroke: #294a66;
   transition: stroke 0.15s linear;
 }
 
-.word:hover {
-  border-color: #09bc8a;
+.word__link:hover {
+  color: #09bc8a;
 }
 
-.word:hover .word-icon {
+.word__link:hover .word__icon {
   stroke: #09bc8a;
+}
+
+.word__delete-button {
+  cursor: pointer;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  top: -13px;
+  right: -13px;
+  z-index: 5;
+  background: #fff;
 }
 
 @media screen and (max-width: 955px) {
