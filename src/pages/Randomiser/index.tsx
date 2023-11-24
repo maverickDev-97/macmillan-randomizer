@@ -14,14 +14,16 @@ export const Randomiser = () => {
 
   const onClick = () => setWord(getRandomWord(word));
   return (
-    <>
+    <div className="randomiser">
       <Heading />
       <Subheading />
-      <Word word={word} />
+      <div style={{ minWidth: 330 }}>
+        <Word word={word} />
+      </div>
       <div className="buttons">
         <Button text="Randomize" isPrimary onClick={onClick} />
         <Button text="Save word" onClick={() => saveWord(word)} />
       </div>
-    </>
+    </div>
   );
 };

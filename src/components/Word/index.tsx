@@ -10,7 +10,7 @@ const Word: FC<WordProps> = ({ word }) => {
     <a className="word" target="_blank" href={link} rel="noreferrer">
       {word}
       <div className="word-icon">
-        <Icon name={IconsNames.RightArrow} size={IconsSizes.Large} />
+        <Icon name={IconsNames.RightArrow} size={IconsSizes.Small} />
       </div>
     </a>
   );

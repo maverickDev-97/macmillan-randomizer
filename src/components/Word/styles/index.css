@@ -3,16 +3,16 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  min-width: 330px;
+  min-width: inherit;
   padding: 13px 17px;
   border: 1px solid #e3ebf1;
   text-decoration: none;
   color: inherit;
   font-family: "DM Mono";
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 42px;
-  /* text-align: center; */
+  transition: border 0.15s linear;
 }
 
 .word-icon {
@@ -22,6 +22,23 @@
   transition: stroke 0.15s linear;
 }
 
+.word:hover {
+  border-color: #09bc8a;
+}
+
 .word:hover .word-icon {
   stroke: #09bc8a;
+}
+
+@media screen and (max-width: 955px) {
+  .word {
+    font-size: 16px;
+    padding: 8px 17px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .word {
+    padding: 4px 17px;
+  }
 }

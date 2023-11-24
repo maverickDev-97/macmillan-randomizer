@@ -1,6 +1,41 @@
-.grid {
+.words__container {
+  width: 100%;
+}
+
+.words__grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 30px;
   row-gap: 30px;
+}
+
+.words__title {
+  line-height: 1;
+  margin: 32px 0 24px;
+  font-weight: bold;
+}
+
+/*  757 */
+
+@media screen and (max-width: 1100px) {
+  .words__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+}
+
+@media screen and (max-width: 757px) {
+  .words__grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .words__grid {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
 }
