@@ -31,3 +31,9 @@
 .isPrimary:hover {
   background: #07ae7f;
 }
+
+@media screen and (max-width: 350px) {
+  .button {
+    width: 100%;
+  }
+}

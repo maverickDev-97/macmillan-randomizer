@@ -9,3 +9,12 @@
 .highlight {
   color: #09bc8a;
 }
+
+@media screen and (max-width: 350px) {
+  .subheading {
+    margin: 16px auto 24px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

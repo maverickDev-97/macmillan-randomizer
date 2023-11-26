@@ -36,6 +36,17 @@ export const useLocalStorage = () => {
     localStorage.setItem("words", updatedArray?.join(",") || "");
   };
 
+  const clearStorage = () => {
+    if (
+      window.confirm(
+        "Are you sure you want to clear your storage? All words will be deleted."
+      )
+    ) {
+      localStorage.removeItem("words");
+      setWords([]);
+    }
+  };
+
   useEffect(() => {
     const storageWords = getAllSavedWords();
     if (storageWords) {
@@ -49,5 +60,6 @@ export const useLocalStorage = () => {
     checkWord,
     saveWord,
     removeWordFromStorage,
+    clearStorage,
   };
 };

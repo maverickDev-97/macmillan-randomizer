@@ -17,7 +17,7 @@ export const Randomiser = () => {
     <div className="randomiser">
       <Heading />
       <Subheading />
-      <div style={{ minWidth: 330 }}>
+      <div className="word__wrapper">
         <Word word={word} />
       </div>
       <div className="buttons">

@@ -11,7 +11,7 @@ export const Header = () => {
       <nav>
         <ul className="menu">
           <li className={`menu__item ${isMainPage ? "active" : ""}`}>
-            <Link to="/">Randomizer</Link>
+            <Link to="/">Randomiser</Link>
           </li>
           <li className={`menu__item ${!isMainPage ? "active" : ""}`}>
             <Link to="/saved">Saved words</Link>
