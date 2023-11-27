@@ -31,7 +31,7 @@
 }
 
 .content {
-  min-height: calc(100vh - 79px);
+  min-height: calc(100vh - 149px);
   color: #294a66;
 
   &_dark {
@@ -44,5 +44,11 @@
     margin: 0 auto;
     padding: 0 15px;
     min-height: inherit;
+  }
+}
+
+@media screen and (max-width: 757px) {
+  .content {
+    min-height: calc(100vh - 131px);
   }
 }

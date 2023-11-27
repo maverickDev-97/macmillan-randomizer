@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import { Header } from "./components/Header";
 import { ThemeContext } from "./contexts/themeContext";
+import { Footer } from "./components/Footer";
 
 export const App = () => {
   const { isLightTheme } = useContext(ThemeContext);
@@ -13,6 +14,7 @@ export const App = () => {
           <Outlet />
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
