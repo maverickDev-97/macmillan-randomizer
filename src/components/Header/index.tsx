@@ -19,10 +19,8 @@ export const Header = () => {
           <li
             className={`menu__item ${
               isMainPage
-                ? `menu__item_active ${
-                    isLightTheme ? "" : "menu__item_active_dark"
-                  }`
-                : ``
+                ? `menu__item_active ${isLightTheme ? "" : "menu__item_dark"}`
+                : `${isLightTheme ? "" : "menu__item_dark"}`
             }`}
           >
             <Link to="/">Randomiser</Link>
@@ -30,10 +28,8 @@ export const Header = () => {
           <li
             className={`menu__item ${
               !isMainPage
-                ? `menu__item_active ${
-                    isLightTheme ? "" : "menu__item_active_dark"
-                  }`
-                : ``
+                ? `menu__item_active ${isLightTheme ? "" : " menu__item_dark"}`
+                : `${isLightTheme ? "" : "menu__item_dark"}`
             }`}
           >
             <Link to="/saved">Saved words</Link>

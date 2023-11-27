@@ -25,6 +25,9 @@
   font-family: "DM Sans";
   font-weight: 400;
   color: #294a66;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
 
 .content {
