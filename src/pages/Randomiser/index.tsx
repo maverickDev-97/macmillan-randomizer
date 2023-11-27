@@ -5,7 +5,7 @@ import Subheading from "../../components/Subheading";
 import Word from "../../components/Word";
 import { getRandomWord } from "../../db";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
-import "./styles/index.css";
+import "./styles/index.scss";
 
 export const Randomiser = () => {
   const [word, setWord] = useState<string>(getRandomWord("initialWord"));
@@ -17,10 +17,10 @@ export const Randomiser = () => {
     <div className="randomiser">
       <Heading />
       <Subheading />
-      <div className="word__wrapper">
+      <div className="randomiser__word-wrapper">
         <Word word={word} />
       </div>
-      <div className="buttons">
+      <div className="randomiser__buttons">
         <Button text="Randomize" isPrimary onClick={onClick} />
         <Button text="Save word" onClick={() => saveWord(word)} />
       </div>

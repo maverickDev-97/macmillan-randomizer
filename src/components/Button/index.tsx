@@ -1,8 +1,7 @@
 import { FC, useContext } from "react";
-
-import "./styles/index.css";
 import { ButtonProps } from "./types";
 import { ThemeContext } from "../../contexts/themeContext";
+import "./styles/index.scss";
 
 const Button: FC<ButtonProps> = ({ text, isPrimary, onClick }) => {
   const { isLightTheme } = useContext(ThemeContext);

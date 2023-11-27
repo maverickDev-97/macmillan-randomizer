@@ -19,19 +19,27 @@
 *,
 *:after,
 *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "DM Sans";
   font-weight: 400;
-  color: inherit;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #294a66;
 }
 
-.buttons {
-  display: flex;
-  justify-content: center;
+.content {
+  min-height: calc(100vh - 79px);
+  color: #294a66;
+
+  &_dark {
+    background: #0a1a28;
+    color: #fff;
+  }
+
+  &__container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+    min-height: inherit;
+  }
 }

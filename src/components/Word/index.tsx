@@ -1,10 +1,10 @@
 import { FC, useContext } from "react";
 import Icon from "../Icon";
 import { IconsNames, IconsSizes } from "../Icon/types";
-import "./styles/index.css";
 import { WordProps } from "./types";
 import { useLocation } from "react-router-dom";
 import { ThemeContext } from "../../contexts/themeContext";
+import "./styles/index.scss";
 
 const Word: FC<WordProps> = ({ word, removeWordFromStorage = () => {} }) => {
   const { pathname } = useLocation();

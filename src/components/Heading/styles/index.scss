@@ -3,6 +3,10 @@
   font-family: "DM Mono";
   font-size: 28px;
   font-weight: 500;
+
+  &_dark {
+    color: #fff;
+  }
 }
 
 @media screen and (max-width: 350px) {

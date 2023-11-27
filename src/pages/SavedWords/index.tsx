@@ -3,17 +3,25 @@ import Button from "../../components/Button";
 import { Warning } from "../../components/Warning";
 import Word from "../../components/Word";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
-import "./styles/index.css";
+import "./styles/index.scss";
+import { useContext } from "react";
+import { ThemeContext } from "../../contexts/themeContext";
 
 export const SavedWords = () => {
   const { words, removeWordFromStorage, clearStorage } = useLocalStorage();
+
+  const { isLightTheme } = useContext(ThemeContext);
 
   const navigate = useNavigate();
 
   return (
     <div className="words__container">
       <div className="words__header">
-        <h1 className="words__title">Saved Words</h1>
+        <h1
+          className={`words__title ${isLightTheme ? "" : "words__title_dark"}`}
+        >
+          Saved Words
+        </h1>
         {words.length ? (
           <Button text="Clear storage" onClick={clearStorage} />
         ) : (

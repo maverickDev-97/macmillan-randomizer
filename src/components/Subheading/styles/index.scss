@@ -4,10 +4,14 @@
   font-size: 18px;
   line-height: 27px;
   text-align: center;
-}
 
-.highlight {
-  color: #09bc8a;
+  &__highlight {
+    color: #09bc8a;
+  }
+
+  &_dark {
+    color: #fff;
+  }
 }
 
 @media screen and (max-width: 350px) {

@@ -13,31 +13,30 @@
   border-radius: 1px;
   outline: none;
   transition: background 0.15s linear;
-}
 
-.button_dark {
-  background: #fff0;
-}
+  &_dark {
+    background: #fff0;
+    &:hover {
+      background: #143a30;
+    }
+  }
 
-.button_isPrimary {
-  background: #09bc8a;
-  color: #fff;
-}
+  &_isPrimary {
+    background: #09bc8a;
+    color: #fff;
 
-.button:nth-last-of-type(1) {
-  margin-right: 0;
-}
+    &:hover {
+      background: #07ae7f;
+    }
+  }
 
-.button:hover {
-  background: #e5f4f0;
-}
+  &:nth-last-of-type(1) {
+    margin-right: 0;
+  }
 
-.button_isPrimary:hover {
-  background: #07ae7f;
-}
-
-.button_dark:hover {
-  background: #143a30;
+  &:hover {
+    background: #e5f4f0;
+  }
 }
 
 @media screen and (max-width: 350px) {

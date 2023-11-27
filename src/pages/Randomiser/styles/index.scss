@@ -1,0 +1,31 @@
+.randomiser {
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__word-wrapper {
+    min-width: 330px;
+  }
+
+  &__buttons {
+    display: flex;
+    margin-top: 32px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .randomiser {
+    &__word-wrapper {
+      min-width: 100%;
+    }
+
+    &__buttons {
+      margin-top: 24px;
+      width: 100%;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+}
