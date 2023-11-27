@@ -19,6 +19,19 @@
       color: #09bc8a;
     }
   }
+
+  &__dark {
+    background: #0a1a28;
+    border-color: #132a3e;
+
+    & p {
+      color: #fff;
+    }
+
+    & a {
+      color: #fff;
+    }
+  }
 }
 
 @media screen and (max-width: 757px) {

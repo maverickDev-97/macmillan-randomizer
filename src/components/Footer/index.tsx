@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import "./styles/index.scss";
+import { ThemeContext } from "../../contexts/themeContext";
 
 export const Footer = () => {
+  const { isLightTheme } = useContext(ThemeContext);
+
   return (
-    <footer className="footer">
+    <footer className={`footer ${isLightTheme ? "" : "footer__dark"}`}>
       <p>Made with ❤️</p>
       <p>
         by{" "}
