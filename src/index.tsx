@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import { Randomiser } from "./pages/Randomiser";
 import { SavedWords } from "./pages/SavedWords";
+import { ThemeProvider } from "./contexts/themeContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -29,6 +30,8 @@ const router = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );

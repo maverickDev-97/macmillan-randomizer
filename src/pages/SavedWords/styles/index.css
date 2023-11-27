@@ -1,9 +1,9 @@
 .words__container {
   width: 100%;
+  padding: 30px 0;
 }
 
 .words__header {
-  margin: 30px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

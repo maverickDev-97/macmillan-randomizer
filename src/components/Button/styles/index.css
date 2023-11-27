@@ -12,24 +12,32 @@
   border: 1px solid #09bc8a;
   border-radius: 1px;
   outline: none;
-  transition: all 0.15s linear;
+  transition: background 0.15s linear;
 }
 
-.button:hover {
-  background: #e5f4f0;
+.button_dark {
+  background: #fff0;
+}
+
+.button_isPrimary {
+  background: #09bc8a;
+  color: #fff;
 }
 
 .button:nth-last-of-type(1) {
   margin-right: 0;
 }
 
-.isPrimary {
-  background: #09bc8a;
-  color: #fff;
+.button:hover {
+  background: #e5f4f0;
 }
 
-.isPrimary:hover {
+.button_isPrimary:hover {
   background: #07ae7f;
+}
+
+.button_dark:hover {
+  background: #143a30;
 }
 
 @media screen and (max-width: 350px) {

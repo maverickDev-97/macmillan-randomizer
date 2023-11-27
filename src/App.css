@@ -1,0 +1,16 @@
+.content {
+  min-height: calc(100vh - 79px);
+  color: #294a66;
+}
+
+.content.dark {
+  background: #0a1a28;
+  color: #fff;
+}
+
+.content__container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  min-height: inherit;
+}
