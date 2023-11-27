@@ -17,7 +17,11 @@ export const SavedWords = () => {
         {words.length ? (
           <Button text="Clear storage" onClick={clearStorage} />
         ) : (
-          <></>
+          <Button
+            text="Explore words"
+            isPrimary
+            onClick={() => navigate("/")}
+          />
         )}
       </div>
       <Warning
@@ -26,19 +30,6 @@ export const SavedWords = () => {
             ? `All words saved here are stored in your browser storage and can be
         deleted if you clear browser data, cookies, etc.`
             : `Your storage is empty. You can navigate to the randomiser page and learn some new words`
-        }
-        children={
-          words.length ? (
-            <></>
-          ) : (
-            <div className="warning__button">
-              <Button
-                text="Explore words"
-                isPrimary
-                onClick={() => navigate("/")}
-              />
-            </div>
-          )
         }
       />
       <div className="words__grid">
