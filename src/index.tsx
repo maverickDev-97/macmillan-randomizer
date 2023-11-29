@@ -6,6 +6,7 @@ import { Randomiser } from "./pages/Randomiser";
 import { SavedWords } from "./pages/SavedWords";
 import { ThemeProvider } from "./contexts/themeContext";
 import "./index.scss";
+import { Toaster } from "react-hot-toast";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -33,5 +34,6 @@ root.render(
     <ThemeProvider>
       <RouterProvider router={router} />
     </ThemeProvider>
+    <Toaster />
   </React.StrictMode>
 );

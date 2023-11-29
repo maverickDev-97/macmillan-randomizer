@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 export const useLocalStorage = () => {
   const [words, setWords] = useState<string[]>([]);
 
@@ -22,9 +21,15 @@ export const useLocalStorage = () => {
     return storageWords?.includes(word);
   };
 
-  const saveWord = (word: string) => {
-    if (!checkWord(word)) updateLocalStorage(word);
-    return null;
+  const saveWord = async (word: string) => {
+    return new Promise((resolve, reject) => {
+      if (!checkWord(word)) {
+        updateLocalStorage(word);
+        setTimeout(() => resolve(null), 1500);
+      } else {
+        reject();
+      }
+    });
   };
 
   const removeWordFromStorage = (wordToRemove: string) => {

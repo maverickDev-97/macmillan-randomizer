@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import Button from "../../components/Button";
 import Heading from "../../components/Heading";
 import Subheading from "../../components/Subheading";
@@ -13,6 +14,23 @@ export const Randomiser = () => {
   const { saveWord } = useLocalStorage();
 
   const onClick = () => setWord(getRandomWord(word));
+
+  const onSave = () => {
+    toast.promise(
+      saveWord(word),
+      {
+        success: "The word has been saved",
+        error: "The word is already saved",
+        loading: "Saving...",
+      },
+      {
+        style: {
+          position: "relative",
+          top: 80,
+        },
+      }
+    );
+  };
   return (
     <div className="randomiser">
       <Heading />
@@ -22,7 +40,7 @@ export const Randomiser = () => {
       </div>
       <div className="randomiser__buttons">
         <Button text="Randomize" isPrimary onClick={onClick} />
-        <Button text="Save word" onClick={() => saveWord(word)} />
+        <Button text="Save word" onClick={onSave} />
       </div>
     </div>
   );
