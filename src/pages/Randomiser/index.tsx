@@ -10,27 +10,35 @@ import "./styles/index.scss";
 
 export const Randomiser = () => {
   const [word, setWord] = useState<string>(getRandomWord("initialWord"));
+  const [isButtonsDisabled, setIsButtonsDisabled] = useState<boolean>(false);
 
   const { saveWord } = useLocalStorage();
 
   const onClick = () => setWord(getRandomWord(word));
 
-  const onSave = () => {
-    toast.promise(
-      saveWord(word),
-      {
-        success: "The word has been saved",
-        error: "The word is already saved",
-        loading: "Saving...",
-      },
-      {
-        style: {
-          position: "relative",
-          top: 80,
+  const onSave = async () => {
+    setIsButtonsDisabled(true);
+    try {
+      await toast.promise(
+        saveWord(word),
+        {
+          success: "The word has been saved",
+          error: "The word is already saved",
+          loading: "Saving...",
         },
-      }
-    );
+        {
+          style: {
+            position: "relative",
+            top: 80,
+          },
+        }
+      );
+      setIsButtonsDisabled(false);
+    } catch {
+      setTimeout(() => setIsButtonsDisabled(false), 2500);
+    }
   };
+
   return (
     <div className="randomiser">
       <Heading />
@@ -40,7 +48,11 @@ export const Randomiser = () => {
       </div>
       <div className="randomiser__buttons">
         <Button text="Randomize" isPrimary onClick={onClick} />
-        <Button text="Save word" onClick={onSave} />
+        <Button
+          text="Save word"
+          onClick={onSave}
+          disabled={isButtonsDisabled}
+        />
       </div>
     </div>
   );

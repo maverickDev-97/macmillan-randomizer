@@ -1,5 +1,6 @@
 export interface ButtonProps {
-    text: string;
-    onClick?: () => void;
-    isPrimary?: boolean;
+  text: string;
+  onClick?: () => void;
+  isPrimary?: boolean;
+  disabled?: boolean;
 }
