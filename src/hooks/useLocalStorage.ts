@@ -25,7 +25,7 @@ export const useLocalStorage = () => {
     return new Promise((resolve, reject) => {
       if (!checkWord(word)) {
         updateLocalStorage(word);
-        setTimeout(() => resolve(null), 1500);
+        setTimeout(() => resolve(null), 500);
       } else {
         reject();
       }
