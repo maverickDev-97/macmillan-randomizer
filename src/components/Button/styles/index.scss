@@ -12,10 +12,10 @@
   border: 1px solid #09bc8a;
   border-radius: 1px;
   outline: none;
-  transition: background 0.15s linear;
 
   &:hover {
     background: #e5f4f0;
+    transition: background 0.15s linear;
   }
 
   &_dark {
